@@ -1,6 +1,6 @@
 type Winner = string | null;
 
-const calculateWinner = (board: Array<string>): Winner => {
+const computeWinner = (board: Array<string>): Winner => {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
@@ -22,4 +22,4 @@ const calculateWinner = (board: Array<string>): Winner => {
   return null;
 };
 
-export default calculateWinner;
+export default computeWinner;

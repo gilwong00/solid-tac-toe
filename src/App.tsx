@@ -1,6 +1,6 @@
 import { Component, createEffect, createSignal } from 'solid-js';
 import { Board } from './Board';
-import { calculateWinner } from './utils';
+import { computeWinner } from './utils';
 import styles from './App.module.css';
 
 const App: Component = () => {
@@ -9,7 +9,7 @@ const App: Component = () => {
   const [gameWinner, setGameWinner] = createSignal<string>('');
 
   createEffect(() => {
-    const winner = calculateWinner(board());
+    const winner = computeWinner(board());
     if (winner) setGameWinner(winner);
   });
 

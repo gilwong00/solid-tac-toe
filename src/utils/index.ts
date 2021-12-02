@@ -1,1 +1,1 @@
-export { default as calculateWinner } from './calculateWinner';
+export { default as computeWinner } from './computeWinner';

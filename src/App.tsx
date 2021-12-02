@@ -16,7 +16,7 @@ const App: Component = () => {
   const handleClick = (square: number) => {
     const currentBoard = [...board()];
 
-    // If user click an occupied square or if game is won, return
+    // If user click an occupied square or if game is won, prevent anymore actions
     if (gameWinner() || currentBoard[square]) return;
 
     // update board

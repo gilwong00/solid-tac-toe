@@ -18,7 +18,6 @@ const computeWinner = (board: Array<string>): Winner => {
       return board[a];
     }
   }
-
   return null;
 };
 

@@ -1,4 +1,4 @@
-import { Component, createEffect, createSignal } from 'solid-js';
+import { Component, createEffect, createSignal, batch } from 'solid-js';
 import { Board } from './Board';
 import { computeWinner } from './utils';
 import styles from './App.module.css';
@@ -21,8 +21,10 @@ const App: Component = () => {
 
     // update board
     currentBoard[square] = isXTurn() ? 'X' : 'O';
-    setBoard(currentBoard);
-    setIsXTurn(!isXTurn());
+    batch(() => {
+      setBoard(currentBoard);
+      setIsXTurn(!isXTurn());
+    });
   };
 
   return (
